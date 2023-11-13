@@ -1,11 +1,13 @@
 package com.example.server.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Table
 @Entity(name = "MonHoc")
+@Data
 public class MonHoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

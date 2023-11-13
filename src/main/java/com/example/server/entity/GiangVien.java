@@ -1,11 +1,19 @@
 package com.example.server.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Table
 @Entity(name = "GiangVien")
+@Data
+@Builder
+@AllArgsConstructor
 public class GiangVien {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

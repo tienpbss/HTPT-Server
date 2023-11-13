@@ -1,5 +1,6 @@
 package com.example.server.service;
 
+
 import com.example.server.entity.GiangVien;
 import com.example.server.repository.GiangVienRepository;
 import com.example.server.service.interF.IGiangVienService;
@@ -23,6 +24,16 @@ public class GiangVienService implements IGiangVienService {
         }
 
         return results;
+    }
+
+    @Override
+    public GiangVien findByEmail(String email) {
+        return giangVienRepository.findFirstByEmail(email);
+    }
+
+    @Override
+    public GiangVien save(GiangVien giangvien) {
+        return giangVienRepository.save(giangvien);
     }
 
     @Override

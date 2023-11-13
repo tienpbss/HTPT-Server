@@ -1,9 +1,11 @@
 package com.example.server.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Table
-@Entity(name = "SinhVien")
+@Entity(name = "Dangky")
+@Data
 public class DangKy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

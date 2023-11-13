@@ -1,9 +1,11 @@
 package com.example.server.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Table
 @Entity(name = "LichHoc")
+@Data
 public class LichHoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

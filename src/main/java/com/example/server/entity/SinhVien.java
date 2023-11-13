@@ -1,12 +1,20 @@
 package com.example.server.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Table
 @Entity(name = "SinhVien")
-public class SinhVien {
+@Data
+@AllArgsConstructor
+@Builder
+public class SinhVien{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 10)
@@ -19,6 +27,7 @@ public class SinhVien {
     private String email;
 
     @Column(name = "password", length = 255)
+//    @JsonIgnore
     private String password;
     @Column(name = "ngaySinh", length = 255)
     private String ngaySinh;
@@ -45,8 +54,7 @@ public class SinhVien {
 
     }
 
-    public SinhVien(int id, String ten, String ngaySinh, String gioiTinh, String email, String password) {
-        this.id = id;
+    public SinhVien(String ten, String ngaySinh, String gioiTinh, String email, String password) {
         this.ten = ten;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;

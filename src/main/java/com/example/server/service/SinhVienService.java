@@ -24,9 +24,19 @@ public class SinhVienService implements ISinhVienService {
         for(SinhVien item: entities) {
             results.add(item);
         }
-
         return results;
     }
+
+    @Override
+    public SinhVien findByEmail(String email) {
+        return sinhVienRepository.findFirstByEmail(email);
+    }
+
+    @Override
+    public SinhVien save(SinhVien sinhvien) {
+        return sinhVienRepository.save(sinhvien);
+    }
+
 
     @Override
     public boolean login(String email, String password) {
